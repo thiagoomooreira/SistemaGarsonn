@@ -13,7 +13,7 @@ namespace SistemaGarsonWeb.Models {
         public string Mesa { get; set; }
         public decimal ValorTotal { get; set; }
         public string Status { get; set; }
-        [Key] [ForeignKey("Colaborador")]
+        [ForeignKey("Colaborador")]
         public int IdColaborador { get; set; }
         public virtual Colaborador Colaborador { get; set; }
     }

@@ -7,7 +7,7 @@ using System.Web;
 
 namespace SistemaGarsonWeb.Models {
     public class PratosPedidos {
-        [Key] [ForeignKey("Prato")]
+        [ForeignKey("Prato")]
         public int IdPrato { get; set; }
         public virtual Prato Prato { get; set; }
         [ForeignKey("Pedido")]
