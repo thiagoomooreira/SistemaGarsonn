@@ -18,7 +18,7 @@ namespace SistemaGarsonWeb.Controllers
             cmd.Open();
             ContextModel _db = new ContextModel(); 
             Prato prato = new Prato();
-            prato.Nome = "Teste";
+            prato.Nome = "Tete";
             prato.Descricao = "Testando conectino no banco iuserf";
             prato.Preco = 78;
             _db.Pratos.Add(prato);
