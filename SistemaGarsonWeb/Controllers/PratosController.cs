@@ -1,5 +1,6 @@
 ﻿using SistemaGarsonWeb.Context;
 using SistemaGarsonWeb.Models;
+using SistemaGarsonWeb.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -14,14 +15,10 @@ namespace SistemaGarsonWeb.Controllers
         // GET: Pratos
         public ActionResult Index()
         {
-            ContextModel _db = new ContextModel(); 
-            Prato prato = new Prato();
-            prato.Nome = "Tete";
-            prato.Descricao = "Testando conectino no banco iuserf";
-            prato.Preco = 748;
-            _db.Pratos.Add(prato);
-            _db.SaveChanges();
-            return View();
+            return View(new PratoVM());
         }
+        //public ActionResult Buscar(string campo) {
+
+        //}
     }
 }
