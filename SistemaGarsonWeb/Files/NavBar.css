@@ -1,7 +1,9 @@
 ﻿.navbar-header.col {
     padding: 0 !important;
 }
-
+#navbarCollapse {
+    float: right;
+}
 .navbar {
     font-size: 14px;
     background: #fff;
