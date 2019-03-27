@@ -17,6 +17,9 @@ namespace SistemaGarsonWeb.Controllers
         {
             return View(new PratoVM());
         }
+        public ActionResult Cadastrar() {
+            return View(new PratoVM());
+        }
         public ActionResult Buscar(string campo) {
             PratoVM Campo = new PratoVM { Campo = campo };
             if(Campo != null) {
