@@ -14,14 +14,13 @@ namespace SistemaGarsonWeb.Controllers
         // GET: Pratos
         public ActionResult Index()
         {
-            SqlConnection cmd = new SqlConnection("Data Source = den1.mssql8.gear.host;Initial Catalog = sgarsonbd100; Persist Security Info = True;User ID = sgarsonbd100;Password = Vp641Yzr_W0_");
-            cmd.Open();
             ContextModel _db = new ContextModel(); 
             Prato prato = new Prato();
             prato.Nome = "Tete";
             prato.Descricao = "Testando conectino no banco iuserf";
-            prato.Preco = 78;
+            prato.Preco = 748;
             _db.Pratos.Add(prato);
+            _db.SaveChanges();
             return View();
         }
     }

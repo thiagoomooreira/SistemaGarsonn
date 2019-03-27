@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 
 namespace SistemaGarsonWeb.Models {
+    [Table("Pedido")]
     public class Pedido {
         [Key]
         public int IdPedido { get; set; }

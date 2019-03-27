@@ -6,13 +6,14 @@ using System.Linq;
 using System.Web;
 
 namespace SistemaGarsonWeb.Models {
+    [Table("PratosPedidos")]
     public class PratosPedidos {
-        [ForeignKey("Prato")]
+        [ForeignKey("Prato"),Key]
         public int IdPrato { get; set; }
-        public virtual Prato Prato { get; set; }
+        public Prato Prato { get; set; }
         [ForeignKey("Pedido")]
         public int IdPedido { get; set; }
-        public virtual Pedido Pedido { get; set; }
+        public Pedido Pedido { get; set; }
         public int Quantidade { get; set; }
     }
 }
