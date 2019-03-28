@@ -168,8 +168,6 @@
     <Content Include="Files\MDB\css\mdb.min.css" />
     <Content Include="Files\MDB\css\modules\animations-extended.css" />
     <Content Include="Files\MDB\css\modules\animations-extended.min.css" />
-    <Content Include="Files\MDB\css\style.css" />
-    <Content Include="Files\MDB\css\style.min.css" />
     <Content Include="Files\MDB\img\lightbox\default-skin.png" />
     <Content Include="Files\MDB\img\lightbox\default-skin.svg" />
     <Content Include="Files\MDB\img\lightbox\preloader.gif" />
@@ -203,6 +201,8 @@
     <Content Include="Files\MDB\js\modules\wow.js" />
     <Content Include="Files\MDB\js\popper.min.js" />
     <Content Include="Files\MDB\README.txt" />
+    <Content Include="Files\MDB\css\style.css" />
+    <Content Include="Files\MDB\css\style.min.css" />
     <Content Include="Files\Table.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.bundle.js" />
