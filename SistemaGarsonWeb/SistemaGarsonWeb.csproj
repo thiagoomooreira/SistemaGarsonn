@@ -144,6 +144,7 @@
     <Compile Include="Models\Prato.cs" />
     <Compile Include="Models\PratosPedidos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\ColaboradorVM.cs" />
     <Compile Include="ViewModel\PratoVM.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -181,10 +182,10 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Pratos\Index.cshtml" />
+    <Content Include="Views\Colaboradores\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Colaboradores\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
