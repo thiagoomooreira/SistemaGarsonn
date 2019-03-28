@@ -16,7 +16,8 @@
                         <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i></button>
                         <div class="filter-group">
                             <label>Pesquisar</label>
-                            <input type="text" class="form-control">
+                            @Html.EditorFor(m => m.Campo, new { htmlAttributes = new { @class = "form-control", @type = "text",@placeholder="Nome do Prato" } })
+
                         </div>
                     }
                  </div>

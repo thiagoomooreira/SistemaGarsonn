@@ -8,9 +8,6 @@ using System.Web;
 namespace SistemaGarsonWeb.ViewModel {
     public class PratoVM {
         ContextModel _db = new ContextModel();
-        public PratoVM() {
-            Pratos = _db.Pratos.ToList();
-        }
 
         public Prato Prato { get; set; }
         public List<Prato> Pratos { get; set; }
@@ -18,7 +15,7 @@ namespace SistemaGarsonWeb.ViewModel {
 
         public List<Prato> ListarPratos() {
             if(Pratos == null) {
-                _db.Pratos.ToList();
+                Pratos = _db.Pratos.ToList();
             }
             return Pratos;
         }
