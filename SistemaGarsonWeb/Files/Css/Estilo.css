@@ -1,0 +1,19 @@
+﻿.modal-style{
+    margin:10%;
+}
+.modal-style h3{
+    text-align:center;
+    margin-bottom:15%;
+}
+.btn-salvar {
+      color: #fff !important;
+}
+.btn-voltar{
+    color: #fff !important;
+}
+.div-btn-modal button{
+    float:none !important;
+}
+.btn-salvar {
+    margin-left: 20% !important;
+}
