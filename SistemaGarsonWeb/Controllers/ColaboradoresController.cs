@@ -21,7 +21,8 @@ namespace SistemaGarsonWeb.Controllers
             if(Campo != null) {
                 ColaboradorVM todosColaboradores = new ColaboradorVM();
                 var c = from tc in todosColaboradores.ListarColaboradores()
-                        where tc.Nome.ToUpper().StartsWith(campo.ToUpper())
+                        where tc.Nome.ToUpper().StartsWith(campo.ToUpper()) ||
+                        tc.Cpf == campo
                         select tc;
                 ColaboradorVM colaboradores = new ColaboradorVM { Colaboradores = c.ToList<Colaborador>() };
                 if(c.Count() == 0) {
