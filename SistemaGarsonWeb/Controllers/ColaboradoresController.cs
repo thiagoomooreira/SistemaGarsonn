@@ -16,6 +16,10 @@ namespace SistemaGarsonWeb.Controllers
             return View(new ColaboradorVM());
         }
 
+        public ActionResult Cadastrar() {
+            return View(new ColaboradorVM());
+        }
+
         public ActionResult Buscar(string campo) {
             ColaboradorVM Campo = new ColaboradorVM { Campo = campo };
             if(Campo != null) {
@@ -36,6 +40,8 @@ namespace SistemaGarsonWeb.Controllers
                 return View("Index", new ColaboradorVM());
             }
         }
+
+
 
 
 
