@@ -1,9 +1,25 @@
 ﻿@{
     Layout = "";
 }
-<div class="md-form mb-4">
-    <i class="fas fa-lock prefix grey-text"></i>
-    <input type="password" id="defaultForm-pass" class="form-control validate">
-    <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+<div class="modal-style">
+    <h3>Cadastrar Pratos</h3>
+    <div class="md-form">
+        <i class="fas fa-user prefix"></i>
+        <input type="text" id="nome" class="form-control">
+        <label for="nome">Nome</label>
+    </div>
+    <div class="md-form">
+        <i class="fas fa-info-circle prefix"></i>
+        <input type="text" id="descricao" class="form-control">
+        <label for="descricao">Descriçaõ do Prato</label>
+    </div>
+    <div class="md-form">
+        <i class="fas fa-dollar-sign prefix"></i>
+        <input type="text" id="preco" class="form-control">
+        <label for="preco">Preço</label>
+    </div>
+    <div class="div-btn-modal">
+        <button class="btn success-color-dark btn-salvar">Salvar</button>
+        <button class="btn danger-color-dark btn-voltar">Voltar</button>
+    </div>
 </div>
-
