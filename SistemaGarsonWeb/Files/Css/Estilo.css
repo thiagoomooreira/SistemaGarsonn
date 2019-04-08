@@ -11,7 +11,7 @@
 .btn-voltar{
     color: #fff !important;
 }
-.div-btn-modal button{
+.div-btn-modal button,a{
     float:none !important;
 }
 .btn-salvar {
