@@ -2,6 +2,7 @@
 <!-- INICIO DA TABELA-->
 <div class="container">
     <div class="table-wrapper">
+        <a data-url="Colaboradores" data-toggle="modal" data-target="#modal" class="ModalCadastrar">Cadastrar</a>
         <div class="table-title">
             <div class="row">
                 <div class="col-sm-4">
@@ -12,18 +13,18 @@
         <div class="table-filter">
             <div class="row">
                 <div class="col-sm-12">
-                    @using(Html.BeginForm("Buscar","Colaboradores", FormMethod.Post)) {
+                    @using(Html.BeginForm("Buscar", "Colaboradores", FormMethod.Post)) {
                         <button type="submit" class="btn btn-primary px-3"><i class="fas fa-search"></i></button>
                         <div class="filter-group">
                             <label>Pesquisar</label>
-                            @Html.EditorFor(m => m.Campo, new {htmlAttributes = new {@class = "form-control", @type = "text", @placeholder = "Nome do Colaborador"} })
+                            @Html.EditorFor(m => m.Campo, new { htmlAttributes = new { @class = "form-control", @type = "text", @placeholder = "Nome do Colaborador" } })
                         </div>
                     }
                 </div>
             </div>
         </div>
         <table class="table table-striped table-hover">
-            <thead>                
+            <thead>
                 <tr>
                     <th>#</th>
                     <th>NOME</th>
@@ -43,8 +44,16 @@
                         <td>@Html.DisplayFor(a => c.Telefone)</td>
                         <td><button type="button" class="btn btn-primary px-3"><i class="fas fa-angle-right"></i></button></td>
                     </tr>
-                    }
-                </tbody>
+                }
+            </tbody>
         </table>
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                </div>
+            </div>
+        </div>
     </div>
 </div>

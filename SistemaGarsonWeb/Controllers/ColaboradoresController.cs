@@ -1,4 +1,5 @@
-﻿using SistemaGarsonWeb.Models;
+﻿using SistemaGarsonWeb.Context;
+using SistemaGarsonWeb.Models;
 using SistemaGarsonWeb.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,24 @@ namespace SistemaGarsonWeb.Controllers
 {
     public class ColaboradoresController : Controller
     {
+        ContextModel _db = new ContextModel();
         // GET: Colaboradores
         public ActionResult Index()
         {
             return View(new ColaboradorVM());
+        }
+
+        [HttpPost]
+        public ActionResult Cadastrar([Bind(Include = "Colaborador")]ColaboradorVM colaboradorVM) {
+            try {
+                _db.Colaboradors.Add(colaboradorVM.Colaborador);
+                _db.SaveChanges();
+                return View("Index", new ColaboradorVM());
+            }
+            catch {
+                return View("Index", new ColaboradorVM());
+            }
+
         }
 
         public ActionResult Cadastrar() {
