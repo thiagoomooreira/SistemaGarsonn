@@ -1,0 +1,29 @@
+﻿@model SistemaGarsonWeb.ViewModel.PratoVM
+@{
+    Layout = "";
+}
+<div class="modal-style">
+    @using(Html.BeginForm("Editar", "Pratos", FormMethod.Post)) {
+        <h3>Editar Prato</h3>
+        @Html.HiddenFor(l=>l.Prato.IdPrato)
+        <div class="md-form">
+            <i class="fas fa-user prefix"></i>
+            @Html.EditorFor(l => l.Prato.Nome, new { htmlAttributes = new { @id = "nome", @class = "form-control", @type = "text"} })
+            @*<label for="nome">Nome</label>*@
+        </div>
+        <div class="md-form">
+            <i class="fas fa-info-circle prefix"></i>
+            @Html.EditorFor(l => l.Prato.Descricao, new { htmlAttributes = new { @id = "descricao", @class = "form-control", @type = "text" } })
+            @*<label for="descricao">Descriçaõ do Prato</label>*@
+        </div>
+        <div class="md-form">
+            <i class="fas fa-dollar-sign prefix"></i>
+            @Html.EditorFor(l => l.Prato.Preco, new { htmlAttributes = new { @id = "preco", @class = "form-control", @type = "text" } })
+            @*<label for="preco">Preço</label>*@
+        </div>
+        <div class="div-btn-modal">
+            <button class="btn success-color-dark btn-salvar">Salvar</button>
+            <a href="@Url.Action("Index")" class="btn danger-color-dark btn-voltar">Voltar</a>
+        </div>
+    }
+</div>

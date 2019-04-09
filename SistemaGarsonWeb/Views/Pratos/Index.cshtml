@@ -44,7 +44,7 @@
                         <td>@Html.DisplayFor(l => p.Descricao)</td>
                         <td>@Html.DisplayFor(l => p.Preco)</td>
                         <td>
-                            <button type="button" class="btn btn-primary px-3"><i class="fas fa-angle-right"></i></button>
+                            <button data-url="Pratos/Editar/?IdPrato=@p.IdPrato" data-toggle="modal" data-target="#modal" type="button" class="ModalEditar btn btn-primary px-3"><i class="fas fa-angle-right"></i></button>
                         </td>
                     </tr>
                 }
