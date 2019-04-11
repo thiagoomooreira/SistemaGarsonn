@@ -39,14 +39,21 @@ namespace SistemaGarsonWeb.Controllers
         }
         [HttpPost]
         public ActionResult Editar([Bind(Include = "Prato")]PratoVM pratoVM) {
-            var consulta = _db.Pratos.Where(l => l.IdPrato == pratoVM.Prato.IdPrato).FirstOrDefault();
-            if(consulta != null){
-                consulta.Nome = pratoVM.Prato.Nome;
-                consulta.Descricao = pratoVM.Prato.Descricao;
-                consulta.Preco = pratoVM.Prato.Preco;
+            try {
+                var consulta = _db.Pratos.Where(l => l.IdPrato == pratoVM.Prato.IdPrato).FirstOrDefault();
+                if(consulta != null) {
+                    consulta.Nome = pratoVM.Prato.Nome;
+                    consulta.Descricao = pratoVM.Prato.Descricao;
+                    consulta.Preco = pratoVM.Prato.Preco;
+                }
+                _db.SaveChanges();
+                return View("Index", new PratoVM());
             }
-            _db.SaveChanges();
-            return View("Index", new PratoVM());
+            catch {
+                return View("Index", new PratoVM());
+
+            }
+
         }
         public ActionResult Buscar(string campo) {
             PratoVM Campo = new PratoVM { Campo = campo };
