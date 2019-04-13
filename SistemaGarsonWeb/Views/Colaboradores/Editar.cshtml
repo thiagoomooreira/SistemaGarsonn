@@ -1,0 +1,30 @@
+﻿@model SistemaGarsonWeb.ViewModel.ColaboradorVM
+@{
+    Layout = "";
+}
+<div class="modal-style">
+    @using(Html.BeginForm("Editar", "Colaboradores", FormMethod.Post)) {
+        <h3>Editar Prato</h3>
+        @Html.HiddenFor(l => l.Colaborador.IdColaborador)
+        <div class="md-form">
+            <i class="fas fa-user prefix"></i>
+            @Html.EditorFor(l => l.Colaborador.Nome, new { htmlAttributes = new { @id = "nome", @class = "form-control", @type = "text" } })
+        </div>
+        <div class="md-form">
+            <i class="fas fa-address-card prefix"></i>
+            @Html.EditorFor(l => l.Colaborador.Cpf, new { htmlAttributes = new { @id = "cpf", @class = "form-control", @type = "text" } })
+        </div>
+        <div class="md-form">
+            <i class="fas fa-phone prefix"></i>
+            @Html.EditorFor(l => l.Colaborador.Telefone, new { htmlAttributes = new { @id = "telefone", @class = "form-control", @type = "text" } })
+        </div>
+        <div class="md-form">
+            <i class="fas fa-male prefix"></i>
+            @Html.EditorFor(l => l.Colaborador.Funcao, new { htmlAttributes = new { @id = "funcao", @class = "form-control", @type = "text" } })
+        </div>
+        <div class="div-btn-modal">
+            <button class="btn success-color-dark btn-salvar">Salvar</button>
+            <a href="@Url.Action("Index")" class="btn danger-color-dark btn-voltar">Voltar</a>
+        </div>
+    }
+</div>

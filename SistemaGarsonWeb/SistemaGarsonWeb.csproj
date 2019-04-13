@@ -336,6 +336,7 @@
     <Content Include="Views\Colaboradores\Index.cshtml" />
     <Content Include="Views\Colaboradores\Cadastrar.cshtml" />
     <Content Include="Views\Pratos\Editar.cshtml" />
+    <Content Include="Views\Colaboradores\Editar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

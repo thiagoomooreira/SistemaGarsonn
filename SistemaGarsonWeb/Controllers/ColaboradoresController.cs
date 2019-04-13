@@ -56,6 +56,30 @@ namespace SistemaGarsonWeb.Controllers
             }
         }
 
+        public ActionResult Editar(Colaborador colaborador) {
+            colaborador = _db.Colaboradors.Where(l => l.IdColaborador == colaborador.IdColaborador).FirstOrDefault();
+            ColaboradorVM colaboradorVM = new ColaboradorVM { Colaborador = colaborador };
+            return View(colaboradorVM);
+        }
+
+        [HttpPost]
+        public ActionResult Editar([Bind(Include = "Colaborador")]ColaboradorVM colaboradorVM) {
+            try {
+                var consulta = _db.Colaboradors.Where(l => l.IdColaborador == colaboradorVM.Colaborador.IdColaborador).FirstOrDefault();
+                if(consulta != null) {
+                    consulta.Nome = colaboradorVM.Colaborador.Nome;
+                    consulta.Telefone = colaboradorVM.Colaborador.Telefone;
+                    consulta.Cpf = colaboradorVM.Colaborador.Cpf;
+                    consulta.Funcao = colaboradorVM.Colaborador.Funcao;
+                }
+                _db.SaveChanges();
+                return View("Index", new ColaboradorVM());
+            }
+            catch {
+                return View("Index", new ColaboradorVM());
+            }
+        }
+
 
 
 
