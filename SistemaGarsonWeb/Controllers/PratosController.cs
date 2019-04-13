@@ -55,6 +55,20 @@ namespace SistemaGarsonWeb.Controllers
             }
 
         }
+        public ActionResult Deletar(Prato prato) {
+            prato = _db.Pratos.Where(l => l.IdPrato == prato.IdPrato).FirstOrDefault();
+            PratoVM pratoVM = new PratoVM { Prato = prato };
+            return View(pratoVM);
+        }
+        [HttpPost]
+        public ActionResult Deletar([Bind(Include ="Prato")]PratoVM pratoVM) {
+            pratoVM.Prato = _db.Pratos.Where(l => l.IdPrato == pratoVM.Prato.IdPrato).FirstOrDefault();
+            if(pratoVM.Prato != null) {
+                _db.Pratos.Remove(pratoVM.Prato);
+                _db.SaveChanges();
+            }
+            return View("Index",new PratoVM());
+        }
         public ActionResult Buscar(string campo) {
             PratoVM Campo = new PratoVM { Campo = campo };
             if(Campo != null) {
