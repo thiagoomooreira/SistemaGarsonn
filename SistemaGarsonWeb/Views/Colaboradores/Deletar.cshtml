@@ -1,0 +1,16 @@
+﻿@model SistemaGarsonWeb.ViewModel.ColaboradorVM
+@{
+    Layout = "";
+}
+<div class="modal-style">
+    @using(Html.BeginForm("Deletar", "Colaboradores", FormMethod.Post)) {
+        <h3>Deletar Colaborador: @Html.DisplayFor(l => Model.Colaborador.Nome)</h3>
+        @Html.HiddenFor(l => Model.Colaborador.IdColaborador)
+        <div class="div-btn-modal">
+            <button class="btn success-color-dark btn-salvar">Salvar</button>
+            <a href="@Url.Action("Index")" class="btn danger-color-dark btn-voltar">Voltar</a>
+        </div>
+    }
+</div>
+
+

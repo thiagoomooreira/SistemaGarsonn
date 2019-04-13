@@ -80,7 +80,21 @@ namespace SistemaGarsonWeb.Controllers
             }
         }
 
+        public ActionResult Deletar(Colaborador colaborador) {
+            colaborador = _db.Colaboradors.Where(l => l.IdColaborador == colaborador.IdColaborador).FirstOrDefault();
+            ColaboradorVM colaboradorVM = new ColaboradorVM { Colaborador = colaborador };
+            return View(colaboradorVM);
+        }
 
+        [HttpPost]
+        public ActionResult Deletar([Bind(Include = ("Colaborador"))]ColaboradorVM colaboradorVM) {
+            colaboradorVM.Colaborador = _db.Colaboradors.Where(l => l.IdColaborador == colaboradorVM.Colaborador.IdColaborador).FirstOrDefault();
+            if(colaboradorVM.Colaborador != null) {
+                _db.Colaboradors.Remove(colaboradorVM.Colaborador);
+                _db.SaveChanges();
+            }
+            return View("Index", new ColaboradorVM());
+        }
 
 
 

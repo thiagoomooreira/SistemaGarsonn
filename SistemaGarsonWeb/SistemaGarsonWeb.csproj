@@ -338,6 +338,7 @@
     <Content Include="Views\Pratos\Editar.cshtml" />
     <Content Include="Views\Colaboradores\Editar.cshtml" />
     <Content Include="Views\Pratos\Deletar.cshtml" />
+    <Content Include="Views\Colaboradores\Deletar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
