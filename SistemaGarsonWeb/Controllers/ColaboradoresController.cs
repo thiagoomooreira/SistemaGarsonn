@@ -15,6 +15,9 @@ namespace SistemaGarsonWeb.Controllers
         // GET: Colaboradores
         public ActionResult Index()
         {
+            if(!Autenticar()) {
+                return RedirectToAction("Index", "Login", new LoginVM());
+            }
             return View(new ColaboradorVM());
         }
 
@@ -57,7 +60,18 @@ namespace SistemaGarsonWeb.Controllers
         }
 
 
-
+        public bool Autenticar() {
+            try {
+                if(TempData["logado"] != null) {
+                    TempData.Keep("logado");
+                    return true;
+                }
+                return false;
+            }
+            catch {
+                return false;
+            }
+        }
 
 
     }

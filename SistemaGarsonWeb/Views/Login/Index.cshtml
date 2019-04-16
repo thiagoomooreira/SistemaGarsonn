@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "";
+}
+@model SistemaGarsonWeb.ViewModel.LoginVM
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Garson</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Files/Table.css" rel="stylesheet" />
+
+    <!--FREMEWORK-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link href="~/Files/MDB/css/style.min.css" rel="stylesheet" />
+    <link href="~/Files/MDB/css/mdb.min.css" rel="stylesheet" />
+    <link href="~/Files/Css/Estilo.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container div-login">
+        <!-- Default form login -->
+            @using(Html.BeginForm("Logar", "Login", FormMethod.Post, new { @class = "text-center border border-light p-5" })) {
+                <p class="h4 mb-4">Login</p>
+
+                <!-- CPF -->
+                @Html.EditorFor(l => l.Usuario.Colaborador.Cpf, new { htmlAttributes = new { @class = "form-control mb-4", @type = "text", @id = "cpf", @placeholder = "CPF" } })
+
+                <!-- SENHA -->
+                @Html.EditorFor(l => l.Usuario.Senha, new { htmlAttributes = new { @class = "form-control mb-4", @type = "password", @id = "senha", @placeholder = "Senha" } })
+
+                <div class="d-flex justify-content-around">
+                    <div>
+                        <!-- Remember me -->
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                            <label class="custom-control-label" for="defaultLoginFormRemember">Lembrar-se</label>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- Forgot password -->
+                        <a href="">Esqueceu a senha?</a>
+                    </div>
+                </div>
+
+                <!-- Sign in button -->
+                <button class="btn btn-info btn-block my-4" type="submit">Entrar</button>
+            }
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Files/MDB/js/popper.min.js"></script>
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Files/MDB/js/mdb.js"></script>
+    <script src="~/Files/Script/Script.js"></script>
+</body>
+</html>

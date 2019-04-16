@@ -16,6 +16,9 @@ namespace SistemaGarsonWeb.Controllers
         // GET: Pratos
         public ActionResult Index()
         {
+            if(!Autenticar()) {
+                return RedirectToAction("Index", "Login", new LoginVM());
+            }
             return View(new PratoVM());
         }
         public ActionResult Cadastrar() {
@@ -86,6 +89,18 @@ namespace SistemaGarsonWeb.Controllers
             }
             else {
                 return View("Index", new PratoVM());
+            }
+        }
+        private bool Autenticar() {
+            try {
+                if(TempData["logado"] != null) {
+                    TempData.Keep("logado");
+                    return true;
+                }
+                return false;
+            }
+            catch {
+                return false;
             }
         }
     }
