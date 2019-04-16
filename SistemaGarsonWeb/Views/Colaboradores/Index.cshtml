@@ -36,14 +36,19 @@
             </thead>
             <tbody>
                 @foreach(var c in Model.ListarColaboradores()) {
-                    <tr>
-                        <td>@Html.DisplayFor(a => c.IdColaborador)</td>
-                        <td>@Html.DisplayFor(a => c.Nome)</td>
-                        <td>@Html.DisplayFor(a => c.Cpf)</td>
-                        <td>@Html.DisplayFor(a => c.Funcao)</td>
-                        <td>@Html.DisplayFor(a => c.Telefone)</td>
-                        <td><button type="button" class="btn btn-primary px-3"><i class="fas fa-angle-right"></i></button></td>
-                    </tr>
+                <tr>
+                    <td>@Html.DisplayFor(a => c.IdColaborador)</td>
+                    <td>@Html.DisplayFor(a => c.Nome)</td>
+                    <td>@Html.DisplayFor(a => c.Cpf)</td>
+                    <td>@Html.DisplayFor(a => c.Funcao)</td>
+                    <td>@Html.DisplayFor(a => c.Telefone)</td>
+                    <td>
+                        <button data-url="Colaboradores/Editar/?IdColaborador=@c.IdColaborador" data-toggle="modal" data-target="#modal" type="button" class="ModalEditar btn btn-primary px-3"><i class="fas fa-angle-right"></i></button>
+                    </td>
+                    <td>
+                        <button data-url="Colaboradores/Deletar/?IdColaborador=@c.IdColaborador" data-toggle="modal" data-target="#modal" type="button" class="ModalDeletar btn danger-color px-3"><i class="far fa-trash-alt"></i></button>
+                    </td>
+                </tr>
                 }
             </tbody>
         </table>

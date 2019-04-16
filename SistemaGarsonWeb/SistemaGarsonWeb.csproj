@@ -338,7 +338,9 @@
     <Content Include="Views\Colaboradores\Index.cshtml" />
     <Content Include="Views\Colaboradores\Cadastrar.cshtml" />
     <Content Include="Views\Pratos\Editar.cshtml" />
+    <Content Include="Views\Colaboradores\Editar.cshtml" />
     <Content Include="Views\Pratos\Deletar.cshtml" />
+    <Content Include="Views\Colaboradores\Deletar.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
