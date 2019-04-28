@@ -22,9 +22,13 @@ namespace SistemaGarsonWeb.Controllers
         }
 
         [HttpPost]
-        public ActionResult Cadastrar([Bind(Include = "Colaborador")]ColaboradorVM colaboradorVM) {
+        public ActionResult Cadastrar([Bind(Include = "Colaborador,Login")]ColaboradorVM colaboradorVM) {
             try {
                 _db.Colaboradors.Add(colaboradorVM.Colaborador);
+                _db.SaveChanges();
+                var colaborador = _db.Colaboradors.Where(c => c.Cpf == colaboradorVM.Colaborador.Cpf).FirstOrDefault();
+                colaboradorVM.Login.IdColaborador = colaborador.IdColaborador;
+                _db.Logins.Add(colaboradorVM.Login);
                 _db.SaveChanges();
                 return View("Index", new ColaboradorVM());
             }

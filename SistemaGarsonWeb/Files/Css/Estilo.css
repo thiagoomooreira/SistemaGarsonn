@@ -21,3 +21,67 @@
     width:40%;
     margin-top:10%;
 }
+
+#addbutton
+{
+    margin-bottom: 5%;
+    float: right;
+    margin-right: 10%;
+    position: relative;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border: 1px solid dodgerblue;
+    border-radius: 999px;
+    background-image: url('../../Images/plus (1).png');
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.8s ease-in-out;
+}
+
+
+
+#addbutton:hover{
+    transform:rotate(360deg);
+    transition:border-radius 0.8s all;
+    border-top-right-radius:10px;
+    border-bottom-right-radius:10px;
+    
+}
+
+#addbutton:hover .ballon{
+    transition-property:all;
+    visibility:visible;
+    transition-delay:0.8s;
+    border-left-color:white;
+    border-radius: 2px 2px;
+}
+
+#addbutton:hover .ballon a{
+    transition-property:visibility;
+    transition-delay:0.8s;
+    margin-left:20%;
+    visibility:visible;
+    transition-duration:8s
+}
+
+#addbutton .ballon a {
+    color:dodgerblue;
+    margin-left:0%;
+    position:relative;
+    visibility:hidden
+}
+
+.ballon{
+    visibility:hidden;
+    margin-top:-2%;
+    margin-left:90%;
+    width:100px;
+    height:40px;
+    border-bottom-left-radius:5%;
+    border-top-left-radius:5%;
+    background-color:white;
+    border:1px solid dodgerblue;
+    position:relative;
+    padding-top:8px
+}

@@ -10,6 +10,7 @@ namespace SistemaGarsonWeb.ViewModel {
         ContextModel _db = new ContextModel();
 
         public Colaborador Colaborador { get; set; }
+        public Login Login { get; set; }
         public List<Colaborador> Colaboradores { get; set; }
         public string Campo { get; set; }
 

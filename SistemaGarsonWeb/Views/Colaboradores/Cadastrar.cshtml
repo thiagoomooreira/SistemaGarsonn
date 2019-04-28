@@ -24,7 +24,12 @@
         <div class="md-form">
             <i class="fas fa-male prefix"></i>
             @Html.EditorFor(l => l.Colaborador.Funcao, new { htmlAttributes = new { @id = "funcao", @class = "form-control", @type = "text" } })
-            <label for="nfuncao">Função</label>
+            <label for="funcao">Função</label>
+        </div>
+        <div class="md-form">
+            <i class="fas fa-key prefix"></i>
+            @Html.EditorFor(l => l.Login.Senha, new { htmlAttributes = new { @id = "senha", @class = "form-control", @type = "text" } })
+            <label for="senha">Senha</label>
         </div>
         <div class="div-btn-modal">
             <button class="btn success-color-dark btn-salvar">Salvar</button>

@@ -210,6 +210,7 @@
     <Content Include="Files\Script\Script.js" />
     <Content Include="Files\Table.css" />
     <Content Include="Global.asax" />
+    <Content Include="Images\plus %281%29.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
